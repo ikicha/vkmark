@@ -52,7 +52,7 @@ void copy_test(VulkanState& vulkan)
     auto src_buffer_obj = vkutil::BufferBuilder{vulkan}
         .set_size(TEST_BUFFER_SIZE)
         .set_usage(vk::BufferUsageFlagBits::eTransferSrc)
-        .set_memory_properties(vk::MemoryPropertyFlagBits::eHostVisible)
+        .set_memory_properties(vk::MemoryPropertyFlagBits::eHostVisible | vk::MemoryPropertyFlagBits::eHostCached)
         .set_memory_out(src_buffer_memory)
         .build();
 
@@ -103,7 +103,7 @@ void copy_test(VulkanState& vulkan)
     auto dst_buffer_obj = vkutil::BufferBuilder{vulkan}
         .set_size(TEST_BUFFER_SIZE)
         .set_usage(vk::BufferUsageFlagBits::eTransferDst)
-        .set_memory_properties(vk::MemoryPropertyFlagBits::eHostVisible)
+        .set_memory_properties(vk::MemoryPropertyFlagBits::eHostVisible | vk::MemoryPropertyFlagBits::eHostCached)
         .set_memory_out(dst_buffer_memory)
         .build();
     std::cout << "[ISO_TEST] Destination Vulkan buffer created." << std::endl;
