@@ -49,6 +49,7 @@ vkutil_sources = files(
 
 scene_sources = files(
     'scenes/clear_scene.cpp',
+    'scenes/copy_scene.cpp',
     'scenes/cube_scene.cpp',
     'scenes/default_options_scene.cpp',
     'scenes/desktop_scene.cpp',

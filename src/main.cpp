@@ -34,6 +34,7 @@
 #include "main_loop.h"
 
 #include "scenes/clear_scene.h"
+#include "scenes/copy_scene.h"
 #include "scenes/cube_scene.h"
 #include "scenes/default_options_scene.h"
 #include "scenes/desktop_scene.h"
@@ -71,6 +72,7 @@ void set_up_sighandler(MainLoop& main_loop)
 void populate_scene_collection(SceneCollection& sc)
 {
     sc.register_scene(std::make_unique<ClearScene>());
+    sc.register_scene(std::make_unique<CopyScene>());
     sc.register_scene(std::make_unique<CubeScene>());
     sc.register_scene(std::make_unique<DefaultOptionsScene>(sc));
     sc.register_scene(std::make_unique<DesktopScene>());

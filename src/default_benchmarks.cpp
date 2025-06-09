@@ -38,5 +38,6 @@ std::vector<std::string> DefaultBenchmarks::get()
         "desktop",
         "cube",
         "clear"
+        "copy"
     };
 }
